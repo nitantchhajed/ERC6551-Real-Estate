@@ -1,0 +1,287 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "InitializationFailed",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					}
+				],
+				"name": "AccountCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					}
+				],
+				"name": "account",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "accountAddr",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkOwnerAccount",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkTokenInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "initData",
+						"type": "bytes"
+					}
+				],
+				"name": "createAccount",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "executeCallAccount",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "result",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"AccountCreated(address,address,uint256,address,uint256,uint256)": {
+					"details": "The registry SHALL emit the AccountCreated event upon successful account creation"
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"account(address,uint256,address,uint256,uint256)": {
+					"details": "Returns the computed address of a token bound account",
+					"returns": {
+						"_0": "The computed address of the account"
+					}
+				},
+				"createAccount(address,uint256,address,uint256,uint256,bytes)": {
+					"details": "Creates a token bound account for an ERC-721 token. If account has already been created, returns the account address without calling create2. If initData is not empty and account has not yet been created, calls account with provided initData after creation. Emits AccountCreated event.",
+					"returns": {
+						"_0": "the address of the account"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ERC6551RegistryAndAccount.sol": "ERC6551Registry"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/utils/Create2.sol": {
+			"keccak256": "0x6e00f269073ffc4350e56b7e8153c9092d5f70bfba423299990514183101ef89",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8dc5ff5c204604be7594ce2fa9100a0638f22b5aada6ebec1e165b0f50a48447",
+				"dweb:/ipfs/QmfH7uWphPrq8jqwGvyh4pFnLEgEPmLwyGV2Bvx1Acjggh"
+			]
+		},
+		"ERC6551RegistryAndAccount.sol": {
+			"keccak256": "0x4a34d27559826c54261ca7af7ad38fd11251d666cbd85f12aee1593dc75b0159",
+			"urls": [
+				"bzz-raw://6b1123be08844d7e7882ee0c90bb4defb820fee8b9ac633a840a9ec348476819",
+				"dweb:/ipfs/QmPEjYkNhdqGqKQQph5GzHrtJZaMgzS7AeYwpw9nomTwq6"
+			]
+		},
+		"IERC6551Registry.sol": {
+			"keccak256": "0xa716879120182874dd77ddd2cfc45722c2b94b71daaa5ed787d47138f74513a2",
+			"urls": [
+				"bzz-raw://65d87dd5d7c2d059448f374cee2d5587707d828bc463990ec081028f937fb32d",
+				"dweb:/ipfs/QmavVxd4B5U1Z1RXJo3tM2eZX5vSZ7nUSZPEZBF2Y9kzNr"
+			]
+		}
+	},
+	"version": 1
+}
